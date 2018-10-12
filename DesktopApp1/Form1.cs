@@ -66,7 +66,6 @@ namespace DesktopApp1
                 this.score_label.Text = score.ToString();
                 unhide_level_selection(true);
                 g.Clear(Color.White);
-
                 return;
             }
             ResizeRedraw();
@@ -93,6 +92,9 @@ namespace DesktopApp1
             y = generate_random(y); //apple cordinates
             snake.reset();
             this.Focus();
+            g.Clear(Color.White);
+            //redraw border line after g.clear()
+            g.DrawRectangle(new Pen(new SolidBrush(Color.Black)), new Rectangle(0, 0, 450, 450));
             timer.Start();
 
         }
@@ -106,10 +108,11 @@ namespace DesktopApp1
 
         private void ResizeRedraw()
         {
-            g.Clear(Color.White);
-            
+            // clear inside area, where the snake is
+            g.FillRectangle(new SolidBrush(Color.White), new Rectangle(1, 1, 449, 449)); 
+            //redraw new snake afte move
             snake.Draw(g);
-            g.DrawRectangle(new Pen(new SolidBrush(Color.Black)), new Rectangle(0,0,450,450));
+            //redraw apple
             g.FillRectangle(new SolidBrush(Color.Red), new Rectangle(x, y, 10, 10));
         }
 
