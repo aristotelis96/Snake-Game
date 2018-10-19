@@ -94,21 +94,7 @@ namespace DesktopApp1
             var last = body.Last();
             int x = last.X;
             int y = last.Y;
-            switch (direction)
-            {
-                case "UP":
-                    y += 10;
-                    break;
-                case "DOWN":
-                    y -= 10;
-                    break;
-                case "RIGHT":
-                    x -= 10;
-                    break;
-                case "LEFT":
-                    x += 10;
-                    break;
-            }
+            
             body.AddLast(new Rectangle(x, y, 10, 10));
             body.AddLast(new Rectangle(x, y, 10, 10));
             body.AddLast(new Rectangle(x, y, 10, 10));
