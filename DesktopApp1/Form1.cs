@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace DesktopApp1
 {
     public partial class Form1 : Form
     {
+        Stream saves;
+        private String gameSavePath;
         private static Snake snake;
         private static Graphics g;
         private static Timer timer;
@@ -24,6 +27,7 @@ namespace DesktopApp1
         int x, y; //apple cordinates
         public Form1()
         {
+            CheckforSavedGame();
             InitializeComponent();
             snake = new Snake();
             timer = new Timer();
@@ -34,6 +38,22 @@ namespace DesktopApp1
 
             unhide_level_selection(false);
             setUI();
+        }
+
+        private void CheckforSavedGame()
+        {
+            gameSavePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ArisVonGames";
+            if (!Directory.Exists(gameSavePath))
+            {
+                Directory.CreateDirectory(gameSavePath);
+            }
+            gameSavePath += "/SnakeSaves.txt";
+            if (!File.Exists(gameSavePath))
+            {
+                var tmp = File.Create(gameSavePath);
+                tmp.Close();
+            }
+
         }
 
         private void setUI()
@@ -66,6 +86,7 @@ namespace DesktopApp1
                 this.score_label.Text = score.ToString();
                 unhide_level_selection(true);
                 g.Clear(Color.White);
+                CheckForNewHighScore();
                 return;
             }
             ResizeRedraw();
@@ -77,6 +98,22 @@ namespace DesktopApp1
                 score++;
             }
             timer.Start();
+        }
+
+        private void CheckForNewHighScore()
+        {
+            string scores;
+            scores = File.ReadAllText(gameSavePath); //find previous high score
+            if (String.IsNullOrEmpty(scores)) //no previous high scores
+            {
+                MessageBox.Show("You have a high score!!!");
+                this.NameHighScore.Visible = true;
+            }
+            else // if previous high score exists
+            {
+
+            }
+                
         }
 
         private void ResetFunction()
