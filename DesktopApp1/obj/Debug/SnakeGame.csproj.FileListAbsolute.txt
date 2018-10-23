@@ -8,3 +8,4 @@ C:\Users\Aristotelis\Desktop\New folder (2)\DesktopApp1\DesktopApp1\obj\Debug\Sn
 C:\Users\Aristotelis\Desktop\New folder (2)\DesktopApp1\DesktopApp1\obj\Debug\SnakeGame.exe
 C:\Users\Aristotelis\Desktop\New folder (2)\DesktopApp1\DesktopApp1\obj\Debug\SnakeGame.pdb
 C:\Users\Aristotelis\Desktop\New folder (2)\DesktopApp1\DesktopApp1\obj\Debug\SnakeGame.csprojAssemblyReference.cache
+C:\Users\Aristotelis\Desktop\New folder (2)\DesktopApp1\DesktopApp1\obj\Debug\DesktopApp1.NewHighscore.resources

@@ -41,7 +41,9 @@ namespace DesktopApp1
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.select_level_label = new System.Windows.Forms.Label();
             this.startbutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelHighscore = new System.Windows.Forms.Label();
+            this.highscore = new System.Windows.Forms.Label();
+            this.nickname = new System.Windows.Forms.Label();
             this.scorepanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@ namespace DesktopApp1
             // 
             this.playagainButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playagainButton.ForeColor = System.Drawing.Color.Crimson;
-            this.playagainButton.Location = new System.Drawing.Point(178, 290);
+            this.playagainButton.Location = new System.Drawing.Point(178, 355);
             this.playagainButton.Name = "playagainButton";
             this.playagainButton.Size = new System.Drawing.Size(131, 59);
             this.playagainButton.TabIndex = 0;
@@ -94,7 +96,7 @@ namespace DesktopApp1
             this.scorepanel.Controls.Add(this.you_scored_label);
             this.scorepanel.Controls.Add(this.label3);
             this.scorepanel.Controls.Add(this.score_label);
-            this.scorepanel.Location = new System.Drawing.Point(93, 138);
+            this.scorepanel.Location = new System.Drawing.Point(93, 168);
             this.scorepanel.Name = "scorepanel";
             this.scorepanel.Size = new System.Drawing.Size(290, 49);
             this.scorepanel.TabIndex = 5;
@@ -103,7 +105,7 @@ namespace DesktopApp1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(236, 213);
+            this.radioButton1.Location = new System.Drawing.Point(212, 315);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(36, 24);
             this.radioButton1.TabIndex = 6;
@@ -116,7 +118,7 @@ namespace DesktopApp1
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(273, 213);
+            this.radioButton2.Location = new System.Drawing.Point(254, 314);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(36, 24);
             this.radioButton2.TabIndex = 7;
@@ -129,7 +131,7 @@ namespace DesktopApp1
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(310, 213);
+            this.radioButton3.Location = new System.Drawing.Point(296, 314);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(36, 24);
             this.radioButton3.TabIndex = 8;
@@ -142,7 +144,7 @@ namespace DesktopApp1
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(347, 213);
+            this.radioButton4.Location = new System.Drawing.Point(338, 314);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(36, 24);
             this.radioButton4.TabIndex = 9;
@@ -155,7 +157,7 @@ namespace DesktopApp1
             // 
             this.select_level_label.AutoSize = true;
             this.select_level_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_level_label.Location = new System.Drawing.Point(89, 212);
+            this.select_level_label.Location = new System.Drawing.Point(89, 314);
             this.select_level_label.Name = "select_level_label";
             this.select_level_label.Size = new System.Drawing.Size(117, 24);
             this.select_level_label.TabIndex = 5;
@@ -166,7 +168,7 @@ namespace DesktopApp1
             this.startbutton.BackColor = System.Drawing.SystemColors.Menu;
             this.startbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startbutton.ForeColor = System.Drawing.Color.Crimson;
-            this.startbutton.Location = new System.Drawing.Point(141, 9);
+            this.startbutton.Location = new System.Drawing.Point(143, 39);
             this.startbutton.Name = "startbutton";
             this.startbutton.Size = new System.Drawing.Size(205, 123);
             this.startbutton.TabIndex = 10;
@@ -175,19 +177,45 @@ namespace DesktopApp1
             this.startbutton.Visible = false;
             this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
             // 
-            // textBox1
+            // labelHighscore
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.labelHighscore.AutoSize = true;
+            this.labelHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighscore.Location = new System.Drawing.Point(88, 246);
+            this.labelHighscore.Name = "labelHighscore";
+            this.labelHighscore.Size = new System.Drawing.Size(125, 25);
+            this.labelHighscore.TabIndex = 5;
+            this.labelHighscore.Text = "Highscore:";
+            this.labelHighscore.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // highscore
+            // 
+            this.highscore.AutoSize = true;
+            this.highscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highscore.Location = new System.Drawing.Point(334, 247);
+            this.highscore.Name = "highscore";
+            this.highscore.Size = new System.Drawing.Size(66, 24);
+            this.highscore.TabIndex = 11;
+            this.highscore.Text = "label2";
+            // 
+            // nickname
+            // 
+            this.nickname.AutoSize = true;
+            this.nickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nickname.Location = new System.Drawing.Point(217, 247);
+            this.nickname.Name = "nickname";
+            this.nickname.Size = new System.Drawing.Size(92, 24);
+            this.nickname.TabIndex = 12;
+            this.nickname.Text = "nickname";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nickname);
+            this.Controls.Add(this.highscore);
+            this.Controls.Add(this.labelHighscore);
             this.Controls.Add(this.startbutton);
             this.Controls.Add(this.select_level_label);
             this.Controls.Add(this.radioButton4);
@@ -199,6 +227,7 @@ namespace DesktopApp1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Snake Game";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
@@ -232,7 +261,9 @@ namespace DesktopApp1
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label select_level_label;
         private System.Windows.Forms.Button startbutton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelHighscore;
+        private System.Windows.Forms.Label highscore;
+        private System.Windows.Forms.Label nickname;
     }
 }
 
