@@ -32,9 +32,9 @@ namespace DesktopApp1
         {
             foreach (var node in body)
             {
-                g.FillRectangle(new SolidBrush(Color.DarkGreen), node);
+                g.FillRectangle(new SolidBrush(Color.LimeGreen), node);
             }
-            g.DrawRectangle(new Pen(new SolidBrush(Color.LightGreen), 2), body.First());
+            g.FillRectangle(new SolidBrush(Color.DarkSlateGray), body.First());
 
         }
 
